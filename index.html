@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <title>Count Chars</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.min.js"></script>
+</head>
+<body>
+ 
+<div class="container" ng-app>
+  <h2>Counting of chars made simple!</h2>
+  <div class="panel-group">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Character Count</div>
+      <div class="panel-body">
+      <div class="form-group">
+          <label for="comment">Write or paste your text into this box</label>
+          <textarea class="form-control" rows="5" ng-model="textToCount" ng-trim="false" ></textarea>
+      </div>
+    
+      <h4 class="well">Number of chars: {{(textToCount.length) || "0"}}</h4>
+      <h4 class="well" ng-show='remainingFromLimit'>Chars Left: {{((limitToCount) || 300) - textToCount.length}}</h4>
+      
+      <div>
+          <p class="bg-info"> <input class="form-control" type="text" ng-model="limitToCount" ng-show='remainingFromLimit' placeholder="Enter chars to show in remaining box. (default is 300)"/> <input type="checkbox" ng-model="remainingFromLimit"/> Check to show remaining chars (default is 300)</p>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
